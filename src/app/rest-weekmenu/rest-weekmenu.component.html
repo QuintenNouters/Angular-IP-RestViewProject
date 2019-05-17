@@ -1,5 +1,16 @@
-<button (click)="refresh()">Refresh</button>
-<div *ngIf="response">
-  
-  <p>Login name: {{response.login}}</p>
-</div>
+<table>
+  <thead>
+    <tr>
+      <td>Key</td>
+      <td>ID</td>
+      <td>Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="response">
+      <td>{{DagMenu.}}</td>
+      <td>{{response.id}}</td>
+      <td>{{response.dag}}</td>
+    </tr>
+  </tbody>
+</table>

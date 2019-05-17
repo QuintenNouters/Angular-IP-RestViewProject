@@ -13,12 +13,13 @@ export class RestWeekmenuComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let obsRest = this.http.get('https://api.github.com/users/quintennouters');
+    //let obsRest = this.http.get('https://api.github.com/users/quintennouters');
+    let obsRest = this.http.get('http://localhost:8080/weekmenu');
     obsRest.subscribe((response) => console.log(response));
   }
 
   refresh(){
-    this.http.get('https://api.github.com/users/quintennouters')
+    this.http.get('http://localhost:8080/weekmenu')
     .subscribe((response) => {this.response = response});
     console.log(this.response);
   }
