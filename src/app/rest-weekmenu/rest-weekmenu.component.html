@@ -1,16 +1,41 @@
-<table>
-  <thead>
-    <tr>
-      <td>Key</td>
-      <td>ID</td>
-      <td>Name</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor ="response">
-      <td>{{DagMenu.}}</td>
-      <td>{{response.id}}</td>
-      <td>{{response.dag}}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngFor ="let dagMenu of dagMenus">
+  <p><span>{{dagMenu.dag}}</span> <span>{{dagMenu.datum}}</span></p>
+  <table>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>beschrijving</td>
+        <td>prijs</td>
+        <td>type</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let gerecht of dagMenu.gerecht">
+        <td>{{gerecht.id}}</td>
+        <td>{{gerecht.beschrijving}}</td>
+        <td>{{gerecht.prijs}}</td>
+        <td>{{gerecht.type}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+        <tr>
+          <td>{{dagMenu.soep.id}}</td>
+          <td>{{dagMenu.soep.beschrijving}}</td>
+          <td>{{dagMenu.soep.prijs}}</td>
+          <td>{{dagMenu.soep.type}}</td>
+        </tr>
+        <tr>
+            <td>{{dagMenu.dagschotel.id}}</td>
+            <td>{{dagMenu.dagschotel.beschrijving}}</td>
+            <td>{{dagMenu.dagschotel.prijs}}</td>
+           <td>{{dagMenu.dagschotel.type}}</td>
+        </tr>
+          <tr>
+              <td>{{dagMenu.veggie.id}}</td>
+              <td>{{dagMenu.veggie.beschrijving}}</td>
+              <td>{{dagMenu.veggie.prijs}}</td>
+              <td>{{dagMenu.veggie.type}}</td>
+            </tr>
+      </tbody>
+  </table>
+</div>
